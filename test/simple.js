@@ -15,7 +15,9 @@ test('load module', function (t) {
   t.ok(slp.version, 'version');
   t.ok(slp.refreshInterval >= 0, 'refreshInterval');
   t.equal(slp.escape('foo=bar'), 'foo\\3Dbar', 'escape');
+  t.equal(slp.escape(null), null, 'escape not null');
   t.equal(slp.unescape('foo\\3Dbar'), 'foo=bar', 'unescape');
+  t.equal(slp.unescape(null), null, 'unescape not null');
   t.equal(slp.property('foobar'), null, 'foobar property exists?!');
   var parsed = slp.parseSrvUrl(service.addr());
   t.equal(parsed.type, service.type, 'service type');
