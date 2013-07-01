@@ -9,7 +9,7 @@
   "devDependencies": {
     "tap": "0.4.x"
   },
-  "repository": "https://github.com/tralamazza/node-slp",
+  "repository": "https://github.com/bug-buster/node-slp",
   "author": "Daniel Tralamazza",
   "license": "MIT",
   "readmeFilename": "README.md"

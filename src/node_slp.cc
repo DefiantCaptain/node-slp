@@ -48,6 +48,8 @@ Handle<Value> ParseSrvURL(const Arguments& args) {
 
 Handle<Value> Escape(const Arguments& args) {
   HandleScope scope;
+  if (args[0]->IsNull())
+    return Null();
   String::Utf8Value inbuf(args[0]);
   char* outBuf;
   SLPBoolean isTag = (args.Length() > 1 && args[1]->BooleanValue()) ? SLP_TRUE : SLP_FALSE;
@@ -62,6 +64,8 @@ Handle<Value> Escape(const Arguments& args) {
 
 Handle<Value> Unescape(const Arguments& args) {
   HandleScope scope;
+  if (args[0]->IsNull())
+    return Null();
   String::Utf8Value inbuf(args[0]);
   char* outBuf;
   SLPError ret = SLPUnescape(*inbuf, &outBuf, args[1]->BooleanValue() ? SLP_TRUE : SLP_FALSE);
