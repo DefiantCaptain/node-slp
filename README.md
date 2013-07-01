@@ -29,6 +29,7 @@ slp.reg('service:myservice://192.168.10.1:80', slp.MAX_LIFETIME, '', function (e
 The MIT License (MIT)
 
 Copyright (c) 2013 Bug Buster Sàrl
+
 Author: Daniel Tralamazza
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
