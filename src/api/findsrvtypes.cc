@@ -34,7 +34,7 @@ struct FindSrvTypesBaton : Baton {
     }
   }
 
-  static void afterWork(uv_work_t* work_req) {
+  static void afterWork(uv_work_t* work_req,int status) {
     HandleScope scope;
     FindSrvTypesBaton* baton = static_cast<FindSrvTypesBaton*>(work_req->data);
     if (baton->slp_error < SLP_OK) {
