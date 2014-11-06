@@ -25,7 +25,7 @@ struct DelAttrsBaton : Baton {
     baton->slp_error = errCode;
   }
 
-  static void afterWork(uv_work_t* work_req) {
+  static void afterWork(uv_work_t* work_req,int status) {
     HandleScope scope;
     Local<Value> argv[1];
     DelAttrsBaton* baton = static_cast<DelAttrsBaton*>(work_req->data);

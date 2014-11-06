@@ -23,7 +23,7 @@ struct DeregBaton : Baton {
     baton->slp_error = errCode;
   }
 
-  static void afterWork(uv_work_t* work_req) {
+  static void afterWork(uv_work_t* work_req,int status) {
     HandleScope scope;
     Local<Value> argv[1];
     DeregBaton* baton = static_cast<DeregBaton*>(work_req->data);

@@ -30,7 +30,7 @@ struct FindAttrsBaton : Baton {
     return SLP_TRUE;
   }
 
-  static void afterWork(uv_work_t* work_req) {
+  static void afterWork(uv_work_t* work_req,int status) {
     HandleScope scope;
     FindAttrsBaton* baton = static_cast<FindAttrsBaton*>(work_req->data);
     if (baton->slp_error < SLP_OK) {

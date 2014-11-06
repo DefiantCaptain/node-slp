@@ -26,7 +26,7 @@ struct RegBaton : Baton {
     baton->slp_error = errCode;
   }
 
-  static void afterWork(uv_work_t* work_req) {
+  static void afterWork(uv_work_t* work_req,int status) {
     HandleScope scope;
     Local<Value> argv[1];
     RegBaton* baton = static_cast<RegBaton*>(work_req->data);
